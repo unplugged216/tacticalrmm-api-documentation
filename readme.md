@@ -317,9 +317,9 @@ URL: https://api.example.com/login
 
 ```js        
 {
-    "username":"tactical",
-    "password":"vtHs75vuFCsBf7Bm",
-    "twofactor":"181527"
+    "username":"some_user_name",
+    "password":"some_password",
+    "twofactor":"XXXXXX"
 }
 ```
 

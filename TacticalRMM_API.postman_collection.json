@@ -306,7 +306,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"tactical\",\r\n    \"password\":\"vtHs75vuFCsBf7Bm\",\r\n    \"twofactor\":\"181527\"\r\n}",
+					"raw": "{\r\n    \"username\":\"some_user_name\",\r\n    \"password\":\"some_password\",\r\n    \"twofactor\":\"181527\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
