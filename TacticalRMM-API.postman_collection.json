@@ -1,0 +1,475 @@
+{
+	"info": {
+		"_postman_id": "e546f087-c1b8-4e29-886e-ac269fd6c52a",
+		"name": "TacticalRMM-API",
+		"description": "*Version added: v0.8.3*\n\nAPI Keys can be created to access any of TacticalRMM's api endpoints, which will bypass 2fa authentication\n\nWhen creating the key you'll need to choose a user, which will reflect what permissions the key has based on the user's role.\n\nNavigate to Settings > Global Settings > API Keys to generate a key\n\nHeaders:\n\n```json\n{\n    \"Content-Type\": \"application/json\", \n    \"X-API-KEY\": \"J57BXCFDA2WBCXH0XTELBR5KAI69CNCZ\"\n}\n```\n\nExample curl request:\n\n```bash\ncurl https://api.example.com/clients -H \"X-API-KEY: Y57BXCFAA9WBCXH0XTEL6R5KAK69CNCZ\"\n```",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Agents",
+			"item": [
+				{
+					"name": "Agent Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URI}}/agents/:id",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"agents",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the agent being requested"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agent List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URI}}/agents",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"agents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agent Checks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URI}}/agents/:id/checks",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"agents",
+								":id",
+								"checks"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the agent being requested"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agent Tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URI}}/agents/:id/tasks",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"agents",
+								":id",
+								"tasks"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the agent being requested"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agent Windows Updates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URI}}/winupdate/:id",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"winupdate",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the agent being requested"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Run Script",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"output\": \"wait\",\r\n    \"email\": [],\r\n    \"emailMode\": \"default\",\r\n    \"custom_field\": null,\r\n    \"save_all_output\": false,\r\n    \"script\": 86,\r\n    \"args\": [],\r\n    \"timeout\": 90\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URI}}/agents/:id/runscript/",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"agents",
+								":id",
+								"runscript",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Agent ID"
+								}
+							]
+						},
+						"description": "- `pk`: ID of the endpoint \n- `timeout`: how long should the script be allowed to run before timing out. \n- `scriptPK`: ID of the script\n- output: Should we `wait`, `forget`, or `email`?\n- `emails`: An array of email addresses to send the output to\n- `emailmode`: This is unknown at the moment"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Core",
+			"item": [
+				{
+					"name": "Dashboard Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URI}}/core/dashinfo/",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"dashinfo",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Custom Fields",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URI}}/core/customfields/",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"customfields",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "List Clients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URI}}/clients/",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"clients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": {\r\n        \"name\": \"Test 123\"\r\n    },\r\n    \"site\": {\r\n        \"name\": \"Test 123 Site 1\"\r\n    },\r\n    \"custom_fields\": [\r\n        {\r\n            \"string_value\": \"Some custom field content\",\r\n            \"field\": 1\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URI}}/clients/",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"clients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Client Agents",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URI}}/agents/?client=",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"agents",
+								""
+							],
+							"query": [
+								{
+									"key": "client",
+									"value": "",
+									"description": "Client ID"
+								}
+							]
+						},
+						"description": "Replace the value oh `clientPK` with that of the client ID you are looking up."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Alerts",
+			"item": [
+				{
+					"name": "Alert List",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URI}}/alerts/",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"alerts",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scripts",
+			"item": [
+				{
+					"name": "List Scripts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URI}}/scripts",
+							"host": [
+								"{{BASE_URI}}"
+							],
+							"path": [
+								"scripts"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "List, manipulate and execute scripts."
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{API_KEY}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "X-API-KEY",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URI",
+			"value": "https://api.example.com"
+		},
+		{
+			"key": "API_KEY",
+			"value": "SomeCrazyToeknGeneratedWithAuthenticate"
+		}
+	]
+}
