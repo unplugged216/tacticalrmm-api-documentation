@@ -3,6 +3,8 @@
 
 *Version added: v0.8.3*
 
+[Tactical-API Documentation Repository](https://github.com/unplugged216/tacticalrmm-api-documentation)
+
 API Keys can be created to access any of TacticalRMM's api endpoints, which will bypass 2fa authentication
 
 When creating the key you'll need to choose a user, which will reflect what permissions the key has based on the user's role.
@@ -458,4 +460,4 @@ URL: https://api.example.com/scripts
 
 ---
 [Back to top](#tacticalrmm-api)
-> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2021-11-14 13:05:49 by [docgen](https://github.com/thedevsaddam/docgen)
+> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2021-11-14 13:24:18 by [docgen](https://github.com/thedevsaddam/docgen)

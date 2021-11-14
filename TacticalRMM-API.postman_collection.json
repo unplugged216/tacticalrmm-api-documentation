@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "e546f087-c1b8-4e29-886e-ac269fd6c52a",
 		"name": "TacticalRMM-API",
-		"description": "*Version added: v0.8.3*\n\nAPI Keys can be created to access any of TacticalRMM's api endpoints, which will bypass 2fa authentication\n\nWhen creating the key you'll need to choose a user, which will reflect what permissions the key has based on the user's role.\n\nNavigate to Settings > Global Settings > API Keys to generate a key\n\nHeaders:\n\n```json\n{\n    \"Content-Type\": \"application/json\", \n    \"X-API-KEY\": \"J57BXCFDA2WBCXH0XTELBR5KAI69CNCZ\"\n}\n```\n\nExample curl request:\n\n```bash\ncurl https://api.example.com/clients -H \"X-API-KEY: Y57BXCFAA9WBCXH0XTEL6R5KAK69CNCZ\"\n```",
+		"description": "*Version added: v0.8.3*\n\n[Tactical-API Documentation Repository](https://github.com/unplugged216/tacticalrmm-api-documentation)\n\nAPI Keys can be created to access any of TacticalRMM's api endpoints, which will bypass 2fa authentication\n\nWhen creating the key you'll need to choose a user, which will reflect what permissions the key has based on the user's role.\n\nNavigate to Settings > Global Settings > API Keys to generate a key\n\nHeaders:\n\n```json\n{\n    \"Content-Type\": \"application/json\", \n    \"X-API-KEY\": \"J57BXCFDA2WBCXH0XTELBR5KAI69CNCZ\"\n}\n```\n\nExample curl request:\n\n```bash\ncurl https://api.example.com/clients -H \"X-API-KEY: Y57BXCFAA9WBCXH0XTEL6R5KAK69CNCZ\"\n```",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
